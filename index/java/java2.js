@@ -163,5 +163,22 @@ function nextSong() {
       loadSong(0)
   }
 }
+document.addEventListener("keyup",(Event)=>{
 
+  if(Event.key==' '){
+    if(tec){
+      audio.play();
+      play.classList.add("fa-pause")
+      play.classList.remove("fa-play")
+      tec=false;
+    }
+   else{
+    audio.pause();
+    play.classList.remove("fa-pause")
+      play.classList.add("fa-play")
+    tec=true;
+   }
+  }
+  
+})
 loadSongs()
